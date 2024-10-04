@@ -1,17 +1,17 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { UserModule } from '../user/user.module';  // Import UserModule
+import { UserModule } from '../user/user.module'; 
 import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from './jwt.strategy';  // Assuming you have JwtStrategy for authentication
+import { JwtStrategy } from './jwt.strategy'; 
 
 
 @Module({
   imports: [
-    UserModule,  // Import UserModule to access UserService
+    UserModule,  
     JwtModule.register({
-      secret: 'your_jwt_secret', // Use a secure secret here
-      signOptions: { expiresIn: '1h' }, // Token expiry time
+      secret: 'your_jwt_secret', 
+      signOptions: { expiresIn: '3d' }, 
     }),
   ],
   providers: [AuthService,JwtStrategy],
