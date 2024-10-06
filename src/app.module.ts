@@ -24,13 +24,12 @@ import { AuthModule } from './auth/auth.module';
       imports: [
         ConfigModule.forRoot({
           isGlobal: true,
-         // envFilePath: ".local.env", // Use the appropriate environment file
           envFilePath: ".prod.env", 
         }),
       ],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
-        type: 'postgres',  // Changed to 'postgres' for PostgreSQL
+        type: 'postgres', 
         host: configService.get('DATABASE_HOST'),
         port: +configService.get<number>('DATABASE_PORT'),
         username: configService.get('DATABASE_USERNAME'),

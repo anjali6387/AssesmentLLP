@@ -1,6 +1,6 @@
 import { Controller, Get } from "@nestjs/common";
 
-@Controller("app")
+@Controller()
 export class AppController{
     constructor(){
 
@@ -9,5 +9,9 @@ export class AppController{
     @Get('/login')
     login():string{
         return 'login route';
+    }
+    @Get()
+    getHello():string{
+        return "hello world"
     }
 }

@@ -1,8 +1,7 @@
 import { Controller,NotFoundException, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
-import { AuthService } from '../auth/auth.service';
-// import { RegisterDto } from './dto/register.dto';
+
 
 @Controller('user')
 export class UserController {
